@@ -1,0 +1,223 @@
+body {
+    padding-top: 56px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    height: calc(100vh - 56px);
+    width: 250px;
+    z-index: 1000;
+    background-color: #f8f9fa;
+    border-right: 1px solid #dee2e6;
+    transition: all 0.3s;
+    overflow-y: auto;
+}
+
+#sidebar.collapsed {
+    margin-left: -250px;
+}
+
+#content {
+    margin-left: 250px;
+    transition: all 0.3s;
+    padding: 20px;
+    flex: 1;
+}
+
+#content.expanded {
+    margin-left: 0;
+}
+
+.sidebar-link {
+    padding: 10px 15px;
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    background-color: #e9ecef;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        display: none;
+    }
+
+    #content {
+        margin-left: 0;
+    }
+
+    #mobile-nav {
+        display: block !important;
+    }
+}
+
+#mobile-nav {
+    display: none;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+    /* Set a fixed height for the chart container */
+    width: 100%;
+}
+
+.content-wrapper {
+    margin-left: 250px;
+    /* Sesuaikan dengan lebar sidebar Anda */
+    padding: 20px;
+    transition: margin-left 0.3s;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        margin-left: 0;
+    }
+}
+
+/* Jika sidebar dapat ditutup, tambahkan kelas ini */
+.sidebar-collapsed .content-wrapper {
+    margin-left: 0;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table th,
+.table td {
+    white-space: nowrap;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    padding: 15px 0;
+    margin-top: auto;
+}
+
+.footer .container {
+    text-align: center;
+}
+
+.footer .text-muted {
+    color: #6c757d;
+}
+
+.ml-card {
+    transition: all 0.3s ease;
+}
+
+.ml-image {
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.ml-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.ml-card:hover .ml-image {
+    filter: grayscale(0%);
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+/* table */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 0.2rem 0.75rem;
+    margin: 0 0.2rem;
+    font-size: 0.9rem;
+    color: #007bff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    background-color: white;
+    transition: background-color 0.2s;
+}
+
+/* Hover dan active state pada pagination */
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #007bff;
+    color: white !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background-color: #007bff;
+    color: white !important;
+}
+
+/* Info dan Length Menu styling */
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_length select {
+    font-size: 0.9rem;
+    color: #2a2d2f;
+}
+
+/* Pencarian styling */
+.dataTables_wrapper .dataTables_filter input {
+    width: 200px;
+    margin-left: 0.5rem;
+    border-radius: 5px;
+}
+
+table#historyTable thead th {
+    text-align: center;
+
+}
+
+table#historyTable thead th:first-child,
+table#historyTable tbody td:first-child {
+    width: 5%;
+    max-width: 50px;
+    min-width: 40px;
+    text-align: center;
+}
+
+table#historyTable thead tr td {
+    padding: 0.75rem;
+    border: 1px solid #dee2e6;
+    vertical-align: middle;
+    text-align: center;
+}
+
+table#historyTable tbody tr td {
+    padding: 0.75rem;
+    border: 1px solid #dee2e6;
+    vertical-align: middle;
+    text-align: center;
+}
+
+table#historyTable tbody tr:hover {
+    background-color: #f1f3f5;
+}
+
+table#historyTable tbody tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+table#historyTable tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+
+table#historyTable tbody tr td {
+    color: #343a40;
+    font-size: 0.9rem;
+}
