@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Form;
 use Illuminate\Support\Facades\Http;
-
+use Illuminate\Support\Facades\Config;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -61,7 +61,7 @@ class FormController extends Controller
         // $uploadedData['vm-url'] = 'https://drive.google.com/uc?export=download&id=1LXfVMjs16Mb4JTbTAStBUxtqrOB5G6Zf';
         $uploadedData['vm-url'] = 'https://github.com/andyathsid/parked-ml-backend/blob/dev-alt/voice-measurements-detection-service/data/raw/FB1cdaopmoe67M2605161917.wav?raw=true';
         // Kirim POST request
-        $response = Http::post('https://6suy7b2n3j.execute-api.ap-southeast-1.amazonaws.com/test/detect', $uploadedData);
+        $response = Http::post(config('services.api.diagnosis'), $uploadedData);
 
         if ($response->successful()) {
             $apiResponse = $response->json();
